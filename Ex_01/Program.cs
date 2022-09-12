@@ -18,11 +18,11 @@ double[,] NewRandomMas(int rows, int columns)
             mas[i, j] = new Random().Next(-10, 10);
         }
     }
-    for (int i = 0; i < mas.GetLength(0); i=i+2)
+    for (int i = 0; i < mas.GetLength(0); i = i + 2)
     {
-        for (int j = 0; j < mas.GetLength(1); j=j+2)
+        for (int j = 0; j < mas.GetLength(1); j = j + 2)
         {
-            mas[i, j] = mas[i, j] /10;
+            mas[i, j] = mas[i, j] / 10;
         }
     }
     return mas;
@@ -43,6 +43,6 @@ void PrintArray(double[,] mas)
 int rows = 3;
 int columns = 4;
 double[,] randmas = NewRandomMas(rows, columns);
-PrintArray (randmas);
+PrintArray(randmas);
 
 
