@@ -6,39 +6,41 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-int[] Sum(int[,] mas)
+
+
+void PrintArray(double[] mas1)
 {
-    int[] sum = new int[mas.GetLength(1)];
-    int sum1 = 0;
-    for (int k = 0; k < sum.Length; k++)
+    for (int i = 0; i < mas1.Length; i++)
     {
-        for (int i = 0; i < mas.GetLength(0); i++)
+        Console.Write($"{mas1[i]} ");
+    }
+}
+
+double[] ArraySR(int[,] mas)
+{
+    double[] sum = new double[mas.GetLength(1)];
+
+    for (int i = 0; i < mas.GetLength(0); i++)
+    {
+        for (int j = 0; j < mas.GetLength(1); j++)
         {
-            int j = 0;
-            while (j < mas.GetLength(1))
-            {
-                sum1 = sum1 + mas[i, j];
-            }
-            j++;
+            sum[j] = sum[j] + mas[i, j];
 
         }
-        sum[k] = sum1;
     }
-    return sum;
-
-}
-
-void PrintArray(int[] mas)
-{
-    for (int i = 0; i < mas.Length; i++)
+    for (int k = 0; k<sum.Length; k++)
     {
-        Console.Write($"{mas[i]} ");
+        sum [k] = sum [k] / mas.GetLength(0);
     }
+
+    return sum;
 }
+
+
+
 
 
 int[,] givenArray = { { 1, 4, 7, 2 }, { 5, 9, 2, 3 }, { 8, 4, 2, 4 } };
-
-PrintArray(Sum(givenArray));
+PrintArray(ArraySR(givenArray));
 
 
