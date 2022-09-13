@@ -15,16 +15,10 @@ double[,] NewRandomMas(int rows, int columns)
     {
         for (int j = 0; j < mas.GetLength(1); j++)
         {
-            mas[i, j] = new Random().Next(-10, 10);
+            mas[i, j] = new Random().NextDouble()*10;
         }
     }
-    for (int i = 0; i < mas.GetLength(0); i = i + 2)
-    {
-        for (int j = 0; j < mas.GetLength(1); j = j + 2)
-        {
-            mas[i, j] = mas[i, j] / 10;
-        }
-    }
+   
     return mas;
 }
 
@@ -34,7 +28,7 @@ void PrintArray(double[,] mas)
     {
         for (int j = 0; j < mas.GetLength(1); j++)
         {
-            Console.Write($"{mas[i, j]} ");
+            Console.Write($"{mas[i, j]:f1} ");
         }
         Console.WriteLine();
     }
