@@ -12,7 +12,7 @@ void PrintArray(double[] mas1)
 {
     for (int i = 0; i < mas1.Length; i++)
     {
-        Console.Write($"{mas1[i]} ");
+        Console.Write($"{mas1[i]:f1} ");
     }
 }
 
